@@ -3,9 +3,9 @@ document.getElementById('btn-deposit').addEventListener('click', function(){
     // step 02
     const depositField = document.getElementById('deposit-field');
     const newDepositAmountString = depositField.value;
-    // if(isNaN(newDepositAmountString)){
-    //     return alert('Please Enter Number value only')
-    // };
+    if(isNaN(newDepositAmountString)){
+        return alert('Please Enter Number value only')
+    };
     const newDepositAmount = parseFloat(newDepositAmountString);
     // step 03
      const depositTotalElement = document.getElementById('deposit-total');
@@ -38,6 +38,9 @@ document.getElementById('btn-deposit').addEventListener('click', function(){
 document.getElementById('btn-withdraw').addEventListener('click', function(){
     const widthdrawField = document.getElementById('widthdraw-field');
     const newWidthdrawAmountString = widthdrawField.value;
+    if(isNaN(newWidthdrawAmountString)){
+        return alert('Please Enter Number value only')
+    };
     const newWidthdrawAmount = parseFloat(newWidthdrawAmountString);
     // step 03
      const widthdrawTotalElement = document.getElementById('withdraw-total');

@@ -7,6 +7,6 @@ document.getElementById("btn-submit").addEventListener("click", function () {
   if (email === "jahid@gmail.com" && password === "jahid") {
     window.location.href = "./js/bank.html";
   } else {
-    alert("passwor vule geso, toke ami tejjo korlam");
+    alert("Invaid Your Password");
   }
 });
