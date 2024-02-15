@@ -1,30 +1,22 @@
-// step 01
 document.getElementById('btn-deposit').addEventListener('click', function(){
-    // step 02
     const depositField = document.getElementById('deposit-field');
     const newDepositAmountString = depositField.value;
     if(isNaN(newDepositAmountString)){
         return alert('Please Enter Number value only')
     };
     const newDepositAmount = parseFloat(newDepositAmountString);
-    // step 03
      const depositTotalElement = document.getElementById('deposit-total');
      const previousDepositTotalString = depositTotalElement.innerText;
      const previousDepositTotal = parseFloat(previousDepositTotalString);
-
-    //  step 04
 
     const currentDepositTotal = previousDepositTotal + newDepositAmount;
 
     depositTotalElement.innerText = currentDepositTotal;
 
-    // step 05 
-
     const balanceTotalElement = document.getElementById('balance-total');
     const previousBalanceTotalString = balanceTotalElement.innerText;
     const previousBalaneTotal = parseFloat(previousBalanceTotalString);
 
-    // step 06
     const currentBalanceTotal = previousBalaneTotal + newDepositAmount;
     balanceTotalElement.innerText = currentBalanceTotal;
 
@@ -41,9 +33,9 @@ document.getElementById('btn-withdraw').addEventListener('click', function(){
     };
     const newWidthdrawAmount = parseFloat(newWidthdrawAmountString);
    
-     const widthdrawTotalElement = document.getElementById('withdraw-total');
-     const previouswidthdrawTotalString = widthdrawTotalElement.innerText;
-     const previouswidthdrawTotal = parseFloat(previouswidthdrawTotalString);
+    const widthdrawTotalElement = document.getElementById('withdraw-total');
+    const previouswidthdrawTotalString = widthdrawTotalElement.innerText;
+    const previouswidthdrawTotal = parseFloat(previouswidthdrawTotalString);
      
     const balancedTotalElement = document.getElementById('balance-total');
     const previousBalance2TotalString = balancedTotalElement.innerText;
@@ -51,9 +43,9 @@ document.getElementById('btn-withdraw').addEventListener('click', function(){
     
     widthdrawField.value ='';
 
-    if(newWidthdrawAmount > previouswidthdrawTotal){
-        alert('Balance Low');
-        return;
+    if(previousBalanedTotal < newWidthdrawAmount){
+       return alert('Balance Low');
+        
     }
 
     const currentwidthdrawTotal = previouswidthdrawTotal + newWidthdrawAmount;
@@ -63,4 +55,4 @@ document.getElementById('btn-withdraw').addEventListener('click', function(){
     const currentBalancedTotal = previousBalanedTotal - newWidthdrawAmount;
     balancedTotalElement.innerText = currentBalancedTotal;
   
-})
+});
